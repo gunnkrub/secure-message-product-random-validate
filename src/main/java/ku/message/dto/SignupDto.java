@@ -1,5 +1,6 @@
 package ku.message.dto;
 
+import ku.message.validation.ValidPassword;
 import lombok.Data;
 
 import javax.validation.constraints.Email;
@@ -15,7 +16,7 @@ public class SignupDto {
     private String username;
 
     @NotBlank
-    @Size(min=12, max=128)
+    @ValidPassword
     private String password;
 
     @NotBlank(message = "Firstname must not be blank")
